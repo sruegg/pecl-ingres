@@ -16,7 +16,7 @@
    |                http://www.eclips-software.com                        |
    |                mailto:idev@eclips-software.com                       |
    |                Ingres Corporation, http://ingres.com                 |
-   | Authors: David Hénot <henot@php.net>                                 |
+   | Authors: David Hï¿½not <henot@php.net>                                 |
    |          Grant Croker <grantc@php.net>                               |
    +----------------------------------------------------------------------+
 */
@@ -3002,7 +3002,7 @@ PHP_FUNCTION(ingres_cursor)
 
     ZEND_FETCH_RESOURCE(ii_result, II_RESULT *, &result, -1, "Ingres Result", le_ii_result);
 
-    RETURN_STRING(ii_result->cursor_id,1);
+    RETURN_STRING(ii_result->cursor_id);
 }
 /* }}} */
 
@@ -3131,98 +3131,98 @@ static void php_ii_field_info(INTERNAL_FUNCTION_PARAMETERS, II_RESULT *ii_result
             {
                 RETURN_FALSE;
             }
-            RETURN_STRING(name, 1);
+            RETURN_STRING(name);
             break;
 
         case II_FIELD_INFO_TYPE:
             switch ((ii_result->descriptor[columnNo]).ds_dataType)
             {
                 case IIAPI_BYTE_TYPE:
-                    RETURN_STRING("IIAPI_BYTE_TYPE", 1);
+                    RETURN_STRING("IIAPI_BYTE_TYPE");
     
                 case IIAPI_CHA_TYPE:
-                    RETURN_STRING("IIAPI_CHA_TYPE", 1);
+                    RETURN_STRING("IIAPI_CHA_TYPE");
     
                 case IIAPI_CHR_TYPE:
-                    RETURN_STRING("IIAPI_CHR_TYPE", 1);
+                    RETURN_STRING("IIAPI_CHR_TYPE");
 
                 case IIAPI_DEC_TYPE:
-                    RETURN_STRING("IIAPI_DEC_TYPE", 1);
+                    RETURN_STRING("IIAPI_DEC_TYPE");
     
                 case IIAPI_DTE_TYPE:
-                    RETURN_STRING("IIAPI_DTE_TYPE", 1);
+                    RETURN_STRING("IIAPI_DTE_TYPE");
 
 #if defined(IIAPI_VERSION_5) 
                 case IIAPI_ADATE_TYPE: /* SQL Standard DATE */
-                    RETURN_STRING("IIAPI_ADATE_TYPE", 1);
+                    RETURN_STRING("IIAPI_ADATE_TYPE");
 
                 case IIAPI_TIME_TYPE: /* Ingres Time */
-                    RETURN_STRING("IIAPI_TIME_TYPE", 1);
+                    RETURN_STRING("IIAPI_TIME_TYPE");
 
                 case IIAPI_TMWO_TYPE: /* Time without Timezone */
-                    RETURN_STRING("IIAPI_TMWO_TYPE", 1);
+                    RETURN_STRING("IIAPI_TMWO_TYPE");
 
                 case IIAPI_TMTZ_TYPE: /* Time with Timezone */
-                    RETURN_STRING("IIAPI_TMTZ_TYPE", 1);
+                    RETURN_STRING("IIAPI_TMTZ_TYPE");
 
                 case IIAPI_TS_TYPE: /* Ingres Timestamp */
-                    RETURN_STRING("IIAPI_TS_TYPE", 1);
+                    RETURN_STRING("IIAPI_TS_TYPE");
 
                 case IIAPI_TSWO_TYPE: /* Timestamp without Timezone */
-                    RETURN_STRING("IIAPI_TSWO_TYPE", 1);
+                    RETURN_STRING("IIAPI_TSWO_TYPE");
 
                 case IIAPI_TSTZ_TYPE: /* Timestamp with Timezone */
-                    RETURN_STRING("IIAPI_TSTZ_TYPE", 1);
+                    RETURN_STRING("IIAPI_TSTZ_TYPE");
 
                 case IIAPI_INTYM_TYPE: /* Interval Year to Month */
-                    RETURN_STRING("IIAPI_INTYM_TYPE", 1);
+                    RETURN_STRING("IIAPI_INTYM_TYPE");
 
                 case IIAPI_INTDS_TYPE: /* Interval Day to Second */
-                    RETURN_STRING("IIAPI_INTDS_TYPE", 1);
+                    RETURN_STRING("IIAPI_INTDS_TYPE");
 
 #endif
                 case IIAPI_FLT_TYPE:
-                    RETURN_STRING("IIAPI_FLT_TYPE", 1);
+                    RETURN_STRING("IIAPI_FLT_TYPE");
     
                 case IIAPI_INT_TYPE:
-                    RETURN_STRING("IIAPI_INT_TYPE", 1);
+                    RETURN_STRING("IIAPI_INT_TYPE");
     
                 case IIAPI_LOGKEY_TYPE:
-                    RETURN_STRING("IIAPI_LOGKEY_TYPE", 1);
+                    RETURN_STRING("IIAPI_LOGKEY_TYPE");
     
                 case IIAPI_LBYTE_TYPE:
-                    RETURN_STRING("IIAPI_LBYTE_TYPE", 1);
+                    RETURN_STRING("IIAPI_LBYTE_TYPE");
     
                 case IIAPI_LVCH_TYPE:
-                    RETURN_STRING("IIAPI_LVCH_TYPE", 1);
+                    RETURN_STRING("IIAPI_LVCH_TYPE");
     
                 case IIAPI_MNY_TYPE:
-                    RETURN_STRING("IIAPI_MNY_TYPE", 1);
+                    RETURN_STRING("IIAPI_MNY_TYPE");
     
                 case IIAPI_TABKEY_TYPE:
-                    RETURN_STRING("IIAPI_TABKEY_TYPE", 1);
+                    RETURN_STRING("IIAPI_TABKEY_TYPE");
     
                 case IIAPI_TXT_TYPE:
-                    RETURN_STRING("IIAPI_TXT_TYPE", 1);
+                    RETURN_STRING("IIAPI_TXT_TYPE");
     
                 case IIAPI_VBYTE_TYPE:
-                    RETURN_STRING("IIAPI_VBYTE_TYPE", 1);
+                    RETURN_STRING("IIAPI_VBYTE_TYPE");
     
                 case IIAPI_VCH_TYPE:
-                    RETURN_STRING("IIAPI_VCH_TYPE", 1);
+                    RETURN_STRING("IIAPI_VCH_TYPE");
 #if defined(IIAPI_VERSION_3)
                 case IIAPI_NCHA_TYPE:
-                    RETURN_STRING("IIAPI_NCHA_TYPE", 1);
+                    RETURN_STRING("IIAPI_NCHA_TYPE");
 
                 case IIAPI_NVCH_TYPE:
-                    RETURN_STRING("IIAPI_NVCH_TYPE", 1);
+                    RETURN_STRING("IIAPI_NVCH_TYPE");
 
                 case IIAPI_LNVCH_TYPE:
-                    RETURN_STRING("IIAPI_LNVCH_TYPE", 1);
+                    RETURN_STRING("IIAPI_LNVCH_TYPE");
 #endif
 #if defined(IIAPI_VERSION_7)
                 case IIAPI_BOOL_TYPE:
-                    RETURN_STRING("IIAPI_BOOL_TYPE", 1);
+                    RETURN_STRING("IIAPI_BOOL_TYPE");
 #endif
         
                 default:
@@ -7791,7 +7791,7 @@ PHP_FUNCTION(ingres_charset)
 
     if (ii_link->charset)
     {
-        RETURN_STRING(ii_link->charset,1);
+        RETURN_STRING(ii_link->charset);
     }
     else
     {
